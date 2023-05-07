@@ -1,26 +1,27 @@
 export default {
   title: 'light',
 
-  GREY_SCALE: {
-    100: 'gainsboro',
-    300: 'lightgray',
-    400: 'darkgray',
-    600: 'dimgray',
-    700: 'gray',
-    800: 'black',
-    900: 'black',
+  PURPLE_SCALE: {
+    purple: '#8284FA',
+    purpleDark: '#5E60CE',
   },
 
-  GREEN_SCALE: {
-    300: 'mediumseagreen',
-    500: 'sea green',
+  BLUE_SCALE: {
+    blue: '#4EA8DE',
+    blueDark: '#1E6F9F',
   },
 
-  WHITE_SCALE: {
-    light: 'white',
+  GRAY_SCALE: {
+    100: '#F2F2F2',
+    200: '#D9D9D9',
+    300: '#808080',
+    400: '#333333',
+    500: '#262626',
+    600: '#1A1A1A',
+    700: '#0D0D0D',
   },
 
   RED_SCALE: {
-    500: 'salmon',
+    danger: '#E25858',
   },
 }
