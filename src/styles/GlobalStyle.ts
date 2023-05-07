@@ -22,4 +22,16 @@ body, input, texarea, button {
   color: ${({ theme }) => theme.GREY_SCALE[300]};
   background-color: ${({ theme }) => theme.GREY_SCALE[900]};
 }
+
+::-webkit-scrollbar {
+  width: 12px
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.GREY_SCALE[900]};
+  border: 1px solid ${({ theme }) => theme.GREY_SCALE[900]};
+}
+::-webkit-scrollbar-button {
+  background-color: ${({ theme }) => theme.GREY_SCALE[900]};
+}
 `
