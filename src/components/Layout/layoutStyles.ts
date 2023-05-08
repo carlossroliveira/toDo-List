@@ -2,14 +2,17 @@ import styled from 'styled-components'
 
 export const ContainerSC = styled.section`
   display: grid;
-  gap: 2rem;
 
-  grid-template-columns: 350px 5fr 1fr;
-  grid-template-rows: 70px 1fr 1fr 100px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px calc(100vh - 200px);
   grid-template-areas:
     'header'
-    'sidebar'
-    'footer';
+    'main';
 
-  color: ${(props) => props.theme.GREEN_SCALE[300]};
+  background-color: ${({ theme }) => theme.GRAY_SCALE[600]};
+
+  @media (max-width: 768px) {
+    font-size: 87.5%;
+    grid-template-columns: 1fr;
+  }
 `
