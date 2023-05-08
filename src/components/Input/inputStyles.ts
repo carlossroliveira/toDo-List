@@ -54,6 +54,10 @@ export const ButtonSC = styled.button`
   color: ${({ theme }) => theme.GRAY_SCALE[100]};
   background-color: ${({ theme }) => theme.BLUE_SCALE.blueDark};
 
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.PURPLE_SCALE.purpleDark};
+  }
+
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.BLUE_SCALE.blue};

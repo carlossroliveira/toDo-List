@@ -1,9 +1,17 @@
+// Packages
+import { Trash } from 'phosphor-react'
+
 // Imagens
 import clipboard from '../../assets/Clipboard.svg'
 
+import { Checkbox } from 'pretty-checkbox-react'
+
 // Styles
 import {
+  CheckboxContainer,
+  CheckboxInput,
   DivSC,
+  DivTableSC,
   FigureSC,
   ImgSC,
   ParagraphOneDivSC,
@@ -11,6 +19,9 @@ import {
   ParagraphTwoDivSC,
   ParagraphTwoSC,
   SpanSC,
+  TableButton,
+  TableCheckboxSC,
+  TableParagraphSC,
 } from './tableStyles'
 
 export const Table = () => {
@@ -27,7 +38,7 @@ export const Table = () => {
         </ParagraphTwoDivSC>
       </DivSC>
 
-      <FigureSC>
+      {/*  <FigureSC>
         <ImgSC src={clipboard} alt="imagem de um livro" />
 
         <figcaption>
@@ -39,7 +50,43 @@ export const Table = () => {
             Crie tarefas e organize seus itens a fazer
           </ParagraphTwoSC>
         </figcaption>
-      </FigureSC>
+      </FigureSC> */}
+
+      <DivTableSC>
+        <CheckboxInput>
+          <label>
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </CheckboxInput>
+
+        <TableParagraphSC>
+          Integer urna interdum massa libero auctor neque turpis turpis semper.
+          Duis vel sed fames integer.
+        </TableParagraphSC>
+
+        <TableButton>
+          <Trash size={20} />
+        </TableButton>
+      </DivTableSC>
+
+      <DivTableSC>
+        <CheckboxInput>
+          <label>
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </CheckboxInput>
+
+        <TableParagraphSC>
+          Integer urna interdum massa libero auctor neque turpis turpis semper.
+          Duis vel sed fames integer.
+        </TableParagraphSC>
+
+        <TableButton>
+          <Trash size={20} />
+        </TableButton>
+      </DivTableSC>
     </>
   )
 }
