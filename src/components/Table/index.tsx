@@ -4,12 +4,10 @@ import { Trash } from 'phosphor-react'
 // Imagens
 import clipboard from '../../assets/Clipboard.svg'
 
-import { Checkbox } from 'pretty-checkbox-react'
-
 // Styles
 import {
-  CheckboxContainer,
   CheckboxInput,
+  ContainerTableSC,
   DivSC,
   DivTableSC,
   FigureSC,
@@ -20,7 +18,6 @@ import {
   ParagraphTwoSC,
   SpanSC,
   TableButton,
-  TableCheckboxSC,
   TableParagraphSC,
 } from './tableStyles'
 
@@ -38,7 +35,7 @@ export const Table = () => {
         </ParagraphTwoDivSC>
       </DivSC>
 
-      {/*  <FigureSC>
+      <FigureSC>
         <ImgSC src={clipboard} alt="imagem de um livro" />
 
         <figcaption>
@@ -50,43 +47,45 @@ export const Table = () => {
             Crie tarefas e organize seus itens a fazer
           </ParagraphTwoSC>
         </figcaption>
-      </FigureSC> */}
+      </FigureSC>
 
-      <DivTableSC>
-        <CheckboxInput>
-          <label>
-            <input type="checkbox" />
-            <span></span>
-          </label>
-        </CheckboxInput>
+      <ContainerTableSC>
+        <DivTableSC>
+          <CheckboxInput>
+            <label>
+              <input type="checkbox" />
+              <span></span>
+            </label>
+          </CheckboxInput>
 
-        <TableParagraphSC>
-          Integer urna interdum massa libero auctor neque turpis turpis semper.
-          Duis vel sed fames integer.
-        </TableParagraphSC>
+          <TableParagraphSC isCheck>
+            Integer urna interdum massa libero auctor neque turpis turpis
+            semper. Duis vel sed fames integer.
+          </TableParagraphSC>
 
-        <TableButton>
-          <Trash size={20} />
-        </TableButton>
-      </DivTableSC>
+          <TableButton>
+            <Trash size={20} />
+          </TableButton>
+        </DivTableSC>
 
-      <DivTableSC>
-        <CheckboxInput>
-          <label>
-            <input type="checkbox" />
-            <span></span>
-          </label>
-        </CheckboxInput>
+        <DivTableSC>
+          <CheckboxInput>
+            <label>
+              <input type="checkbox" />
+              <span></span>
+            </label>
+          </CheckboxInput>
 
-        <TableParagraphSC>
-          Integer urna interdum massa libero auctor neque turpis turpis semper.
-          Duis vel sed fames integer.
-        </TableParagraphSC>
+          <TableParagraphSC>
+            Integer urna interdum massa libero auctor neque turpis turpis
+            semper. Duis vel sed fames integer.
+          </TableParagraphSC>
 
-        <TableButton>
-          <Trash size={20} />
-        </TableButton>
-      </DivTableSC>
+          <TableButton>
+            <Trash size={20} />
+          </TableButton>
+        </DivTableSC>
+      </ContainerTableSC>
     </>
   )
 }
