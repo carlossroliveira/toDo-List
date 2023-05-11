@@ -1,4 +1,6 @@
 // Packages
+import { useMemo } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { Trash } from 'phosphor-react'
 
 // Components
@@ -17,7 +19,50 @@ import {
   TableParagraphSC,
 } from './tableStyles'
 
-export const Table = () => {
+interface ITableProps {
+  list: {
+    id: string
+    isChecked: boolean
+    content: string
+  }[]
+  checked: boolean
+  handleChange: any
+}
+
+export const Table = (props: ITableProps) => {
+  const { list, checked, handleChange } = props
+
+  console.log(list)
+
+  const componentTable = useMemo(
+    () =>
+      list?.map((element) => (
+        <div key={uuidv4()}>
+          <DivTableSC>
+            <CheckboxInput>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  onChange={handleChange}
+                />
+                <span></span>
+              </label>
+            </CheckboxInput>
+
+            <TableParagraphSC isTrue={checked}>
+              {element.content}
+            </TableParagraphSC>
+
+            <TableButton>
+              <Trash size={20} />
+            </TableButton>
+          </DivTableSC>
+        </div>
+      )),
+    [checked, handleChange, list],
+  )
+
   return (
     <>
       <DivSC>
@@ -31,26 +76,8 @@ export const Table = () => {
         </ParagraphTwoDivSC>
       </DivSC>
 
-      <Figure />
-
       <ContainerTableSC>
-        <DivTableSC>
-          <CheckboxInput>
-            <label>
-              <input type="checkbox" />
-              <span></span>
-            </label>
-          </CheckboxInput>
-
-          <TableParagraphSC isCheck>
-            Integer urna interdum massa libero auctor neque turpis turpis
-            semper. Duis vel sed fames integer.
-          </TableParagraphSC>
-
-          <TableButton>
-            <Trash size={20} />
-          </TableButton>
-        </DivTableSC>
+        {list && list.length > 0 ? componentTable : <Figure />}
       </ContainerTableSC>
     </>
   )

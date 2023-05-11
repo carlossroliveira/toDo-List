@@ -75,7 +75,7 @@ export const TableCheckboxSC = styled.input`
   border: 1px solid ${({ theme }) => theme.BLUE_SCALE.blue};
 `
 
-export const TableParagraphSC = styled.p<{ isCheck: boolean }>`
+export const TableParagraphSC = styled.p<{ isTrue: boolean }>`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -83,10 +83,10 @@ export const TableParagraphSC = styled.p<{ isCheck: boolean }>`
 
   flex: 1;
 
-  color: ${({ isCheck, theme }) =>
-    isCheck ? theme.GRAY_SCALE[300] : theme.GRAY_SCALE[100]};
+  color: ${({ isTrue, theme }) =>
+    isTrue ? theme.GRAY_SCALE[300] : theme.GRAY_SCALE[100]};
 
-  text-decoration-line: ${({ isCheck }) => (isCheck ? 'line-through' : 'none')};
+  text-decoration-line: ${({ isTrue }) => (isTrue ? 'line-through' : 'none')};
 `
 
 export const CheckboxInput = styled.div`
