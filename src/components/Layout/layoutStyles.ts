@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const ContainerSC = styled.section`
   display: grid;
 
-  grid-template-columns: 1fr;
-  grid-template-rows: 200px calc(100vh - 200px);
+  grid-template: 130px calc(100vh - 130px) / 1fr;
   grid-template-areas:
     'header'
     'main';

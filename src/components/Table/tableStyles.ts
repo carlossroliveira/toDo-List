@@ -81,6 +81,8 @@ export const TableParagraphSC = styled.p<{ isCheck: boolean }>`
   font-size: 14px;
   line-height: 140%;
 
+  flex: 1;
+
   color: ${({ isCheck, theme }) =>
     isCheck ? theme.GRAY_SCALE[300] : theme.GRAY_SCALE[100]};
 

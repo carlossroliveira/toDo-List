@@ -10,4 +10,8 @@ export const ContainerSC = styled.div`
   margin-bottom: -1.875rem;
 
   background-color: ${({ theme }) => theme.GRAY_SCALE[700]};
+
+  img {
+    margin-bottom: 1.875rem;
+  }
 `
