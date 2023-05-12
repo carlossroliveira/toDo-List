@@ -1,58 +1,52 @@
 // Packages
+import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { FormEvent, useState } from 'react'
 
 // Components
 import { Input } from '../Input'
 import { Table } from '../Table'
 
 // Styles
-import { ButtonSC, ContainerSC, FormSC } from './contentStyles'
-import { PlusCircle } from 'phosphor-react'
+import { ContainerSC } from './contentStyles'
+
+interface IContentProps {
+  id: string
+  content: string
+  completed: boolean
+}
 
 export const Content = () => {
-  const [values, setValues] = useState<any>('')
+  const [list, setList] = useState<IContentProps[]>([])
 
-  const [checked, setChecked] = useState(false)
-
-  const [list, setList] = useState<any>([
-    /* {
-      id: uuidv4(),
-      isChecked: checked,
-      content: 'teste',
-    }, */
-  ])
-
-  const handleOnSubmit = (event: FormEvent) => {
-    event.preventDefault()
-
-    setList([
-      ...list,
-      {
-        id: uuidv4(),
-        isChecked: checked,
-        content: values,
-      },
-    ])
-
-    setValues('')
+  const handleList = (value: string) => {
+    setList([...list, { id: uuidv4(), content: value, completed: false }])
   }
 
-  const handleChange = () => {
-    setChecked((prev) => !prev)
+  const handleDelete = (id: string) => {
+    const valueId = list.filter((element) => element.id !== id)
+
+    setList(valueId)
+  }
+
+  const handleComplete = (id: string) => {
+    const updatedList = list.map((element) =>
+      element.id === id
+        ? { ...element, completed: !element.completed }
+        : element,
+    )
+
+    setList(updatedList)
   }
 
   return (
     <ContainerSC>
-      <FormSC onSubmit={handleOnSubmit}>
-        <Input onValues={values} onSetValues={setValues} />
+      <Input handleList={handleList} />
 
-        <ButtonSC>
-          Criar <PlusCircle size={16} />
-        </ButtonSC>
-      </FormSC>
-
-      <Table list={list} checked={checked} handleChange={handleChange} />
+      <Table
+        list={list}
+        handleDelete={handleDelete}
+        handleComplete={handleComplete}
+      />
     </ContainerSC>
   )
 }

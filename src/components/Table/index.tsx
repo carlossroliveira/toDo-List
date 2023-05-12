@@ -1,7 +1,7 @@
 // Packages
-import { useMemo } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { Trash } from 'phosphor-react'
+import { useCallback, useMemo } from 'react'
 
 // Components
 import { Figure } from '../Figure'
@@ -22,17 +22,22 @@ import {
 interface ITableProps {
   list: {
     id: string
-    isChecked: boolean
     content: string
+    completed: boolean
   }[]
-  checked: boolean
-  handleChange: any
+  handleDelete: (id: string) => void
+  handleComplete: (id: string) => void
 }
 
 export const Table = (props: ITableProps) => {
-  const { list, checked, handleChange } = props
+  const { list, handleDelete, handleComplete } = props
 
-  console.log(list)
+  const handleOnChange = useCallback(
+    (id: string) => {
+      handleComplete(id)
+    },
+    [handleComplete],
+  )
 
   const componentTable = useMemo(
     () =>
@@ -43,24 +48,24 @@ export const Table = (props: ITableProps) => {
               <label>
                 <input
                   type="checkbox"
-                  checked={checked}
-                  onChange={handleChange}
+                  checked={element.completed}
+                  onChange={() => handleOnChange(element.id)}
                 />
                 <span></span>
               </label>
             </CheckboxInput>
 
-            <TableParagraphSC isTrue={checked}>
+            <TableParagraphSC isTrue={element.completed}>
               {element.content}
             </TableParagraphSC>
 
-            <TableButton>
+            <TableButton type="button" onClick={() => handleDelete(element.id)}>
               <Trash size={20} />
             </TableButton>
           </DivTableSC>
         </div>
       )),
-    [checked, handleChange, list],
+    [handleDelete, handleOnChange, list],
   )
 
   return (
