@@ -1,6 +1,6 @@
 // Packages
 import { PlusCircle } from 'phosphor-react'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useRef, useState } from 'react'
 
 // Types
 import { IInputProps } from './types'
@@ -13,6 +13,8 @@ export const Input = (props: IInputProps) => {
 
   const [inputValues, setInputValues] = useState<string>('')
 
+  const inputRef = useRef<HTMLInputElement>(null)
+
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValues(event.target.value)
   }
@@ -24,6 +26,10 @@ export const Input = (props: IInputProps) => {
       handleList(inputValues)
     }
 
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+
     setInputValues('')
   }
 
@@ -32,6 +38,7 @@ export const Input = (props: IInputProps) => {
       <FormSC onSubmit={handleOnSubmit}>
         <InputSC
           type="text"
+          ref={inputRef}
           value={inputValues}
           onChange={handleOnChange}
           placeholder="Adicione uma nova tarefa"
