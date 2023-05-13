@@ -32,6 +32,12 @@ interface ITableProps {
 export const Table = (props: ITableProps) => {
   const { list, handleDelete, handleComplete } = props
 
+  const amountOfTasks = list.length
+
+  const amountOfCompletedTasks = list.filter(
+    (element) => element.completed === true,
+  ).length
+
   const handleOnChange = useCallback(
     (id: string) => {
       handleComplete(id)
@@ -73,11 +79,12 @@ export const Table = (props: ITableProps) => {
       <DivSC>
         <ParagraphOneDivSC>
           Tarefas criadas
-          <SpanSC>0</SpanSC>
+          <SpanSC>{amountOfTasks}</SpanSC>
         </ParagraphOneDivSC>
 
         <ParagraphTwoDivSC>
-          Concluídas <SpanSC>0</SpanSC>
+          Concluídas{' '}
+          <SpanSC>{`${amountOfCompletedTasks} de ${amountOfTasks}`}</SpanSC>
         </ParagraphTwoDivSC>
       </DivSC>
 

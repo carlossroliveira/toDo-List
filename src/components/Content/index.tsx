@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 // Components
-import { Input } from '../Input'
 import { Table } from '../Table'
+import { Input } from '../Input'
 
 // Styles
 import { ContainerSC } from './contentStyles'
@@ -19,23 +19,28 @@ export const Content = () => {
   const [list, setList] = useState<IContentProps[]>([])
 
   const handleList = (value: string) => {
-    setList([...list, { id: uuidv4(), content: value, completed: false }])
+    const newItem = { id: uuidv4(), content: value, completed: false }
+
+    setList((prevList) => [...prevList, newItem])
   }
 
   const handleDelete = (id: string) => {
-    const valueId = list.filter((element) => element.id !== id)
+    const valueId = (prevList: IContentProps[]) =>
+      prevList.filter((element) => element.id !== id)
 
     setList(valueId)
   }
 
   const handleComplete = (id: string) => {
-    const updatedList = list.map((element) =>
-      element.id === id
-        ? { ...element, completed: !element.completed }
-        : element,
-    )
+    const isComplete = (prevList: IContentProps[]) => {
+      return prevList.map((element) =>
+        element.id === id
+          ? { ...element, completed: !element.completed }
+          : element,
+      )
+    }
 
-    setList(updatedList)
+    setList(isComplete)
   }
 
   return (

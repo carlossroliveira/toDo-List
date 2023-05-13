@@ -43,6 +43,9 @@ export const SpanSC = styled.span`
 `
 
 export const ContainerTableSC = styled.div`
+  height: 25rem;
+  overflow-y: auto;
+
   div + div {
     margin-top: 0.75rem;
   }
