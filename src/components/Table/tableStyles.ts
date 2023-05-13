@@ -6,6 +6,17 @@ export const DivSC = styled.div`
   justify-content: space-between;
 
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 0;
+
+    > p {
+      margin-bottom: 1rem;
+    }
+  }
 `
 
 export const ParagraphOneDivSC = styled.p`
@@ -49,6 +60,11 @@ export const ContainerTableSC = styled.div`
   div + div {
     margin-top: 0.75rem;
   }
+
+  @media (max-width: 768px) {
+    overflow-y: scroll;
+    max-height: 220px;
+  }
 `
 
 export const DivTableSC = styled.div`
@@ -64,6 +80,10 @@ export const DivTableSC = styled.div`
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
   border: 1px solid ${({ theme }) => theme.GRAY_SCALE[400]};
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 export const TableCheckboxSC = styled.input`

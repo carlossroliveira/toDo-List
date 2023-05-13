@@ -6,4 +6,8 @@ export const ContainerSC = styled.section`
   max-width: 70rem;
 
   grid-area: main;
+
+  @media (max-width: 768px) {
+    margin: 0px;
+  }
 `

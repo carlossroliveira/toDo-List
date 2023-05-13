@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const ContainerSC = styled.div`
   margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `
 
 export const FormSC = styled.form`
@@ -10,6 +14,11 @@ export const FormSC = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const InputSC = styled.input`
@@ -37,6 +46,10 @@ export const InputSC = styled.input`
     color: ${({ theme }) => theme.GRAY_SCALE[100]};
     border: 1px solid ${({ theme }) => theme.PURPLE_SCALE.purpleDark};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const ButtonSC = styled.button`
@@ -61,5 +74,9 @@ export const ButtonSC = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.BLUE_SCALE.blue};
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `

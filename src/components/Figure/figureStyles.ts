@@ -12,11 +12,27 @@ export const FigureSC = styled.figure`
   border-top: 1px solid ${({ theme }) => theme.GRAY_SCALE[400]};
 
   padding: 0 0 24px 0;
+
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
+
+  > figcaption {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 `
 
 export const ImgSC = styled.img`
   width: 3.5rem;
   margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `
 
 export const ParagraphOneSC = styled.p`
