@@ -2,12 +2,11 @@
 import { PlusCircle } from 'phosphor-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
+// Types
+import { IInputProps } from './types'
+
 // Styles
 import { ButtonSC, ContainerSC, FormSC, InputSC } from './inputStyles'
-
-interface IInputProps {
-  handleList: (value: string) => void
-}
 
 export const Input = (props: IInputProps) => {
   const { handleList } = props

@@ -6,6 +6,9 @@ import { useCallback, useMemo } from 'react'
 // Components
 import { Figure } from '../Figure'
 
+// Types
+import { ITableProps } from './types'
+
 // Styles
 import {
   CheckboxInput,
@@ -18,16 +21,6 @@ import {
   TableButton,
   TableParagraphSC,
 } from './tableStyles'
-
-interface ITableProps {
-  list: {
-    id: string
-    content: string
-    completed: boolean
-  }[]
-  handleDelete: (id: string) => void
-  handleComplete: (id: string) => void
-}
 
 export const Table = (props: ITableProps) => {
   const { list, handleDelete, handleComplete } = props

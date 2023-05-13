@@ -6,14 +6,11 @@ import { v4 as uuidv4 } from 'uuid'
 import { Table } from '../Table'
 import { Input } from '../Input'
 
+// Types
+import { IContentProps } from './types'
+
 // Styles
 import { ContainerSC } from './contentStyles'
-
-interface IContentProps {
-  id: string
-  content: string
-  completed: boolean
-}
 
 export const Content = () => {
   const [list, setList] = useState<IContentProps[]>([])
