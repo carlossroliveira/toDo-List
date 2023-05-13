@@ -20,7 +20,9 @@ export const Input = (props: IInputProps) => {
   const handleOnSubmit = (event: FormEvent) => {
     event.preventDefault()
 
-    handleList(inputValues)
+    if (inputValues.trim() !== '') {
+      handleList(inputValues)
+    }
 
     setInputValues('')
   }
