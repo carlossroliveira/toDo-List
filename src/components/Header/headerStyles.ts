@@ -15,3 +15,15 @@ export const ContainerSC = styled.div`
     margin-bottom: 1.875rem;
   }
 `
+
+export const ButtonSC = styled.button`
+  display: flex;
+
+  border: none;
+  margin-bottom: 1.875rem;
+  margin-left: 0.625rem;
+
+  cursor: pointer;
+  background-color: transparent;
+  color: ${({ theme }) => theme.BLUE_SCALE.blue};
+`

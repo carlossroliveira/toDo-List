@@ -2,26 +2,26 @@ export default {
   title: 'light',
 
   PURPLE_SCALE: {
-    purple: '#8284FA',
-    purpleDark: '#5E60CE',
+    purple: '#8db986',
+    purpleDark: '#736681',
   },
 
   BLUE_SCALE: {
-    blue: '#4EA8DE',
-    blueDark: '#1E6F9F',
+    blue: '#badb73',
+    blueDark: '#acce91',
   },
 
   GRAY_SCALE: {
-    100: '#F2F2F2',
+    100: '#808080',
     200: '#D9D9D9',
     300: '#808080',
-    400: '#333333',
-    500: '#262626',
-    600: '#1A1A1A',
-    700: '#0D0D0D',
+    400: '#8db986',
+    500: '#F2F2F2',
+    600: '#fffae3',
+    700: '#efeae4',
   },
 
   RED_SCALE: {
-    danger: '#E25858',
+    danger: '#8c315d',
   },
 }
