@@ -1,3 +1,6 @@
+// Packages
+import GithubCorner from 'react-github-corner'
+
 // Context
 import { useTheme } from './contexts/themes/useTheme'
 
@@ -15,6 +18,10 @@ export const App = () => {
     <ThemeProvider theme={themes}>
       <DefaultRouter />
 
+      <GithubCorner
+        bannerColor="#1E6F9F"
+        href="https://github.com/carlossroliveira"
+      />
       <GlobalStyle />
     </ThemeProvider>
   )
