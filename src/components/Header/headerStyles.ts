@@ -26,4 +26,11 @@ export const ButtonSC = styled.button`
   cursor: pointer;
   background-color: transparent;
   color: ${({ theme }) => theme.BLUE_SCALE.blue};
+
+  text-decoration: none;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
 `
