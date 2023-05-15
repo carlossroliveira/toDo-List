@@ -71,7 +71,7 @@ export const ButtonSC = styled.button`
     border: 1px solid ${({ theme }) => theme.PURPLE_SCALE.purpleDark};
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     cursor: pointer;
     background-color: ${({ theme }) => theme.BLUE_SCALE.blue};
   }

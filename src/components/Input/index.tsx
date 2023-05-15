@@ -44,7 +44,7 @@ export const Input = (props: IInputProps) => {
           placeholder="Adicione uma nova tarefa"
         />
 
-        <ButtonSC type="submit">
+        <ButtonSC type="submit" disabled={inputValues.length === 0}>
           Criar <PlusCircle size={16} />
         </ButtonSC>
       </FormSC>
